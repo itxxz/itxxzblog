@@ -1,0 +1,21 @@
+    <%@ page language="java" contentType="text/html; charset=utf-8"
+             pageEncoding="utf-8"%>
+
+            <%
+/*     Uploader up = new Uploader(request);
+    up.setSavePath("uploadss");
+    String[] fileType = {".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp"};
+    up.setAllowFiles(fileType);
+    up.setMaxSize(10000); //单位KB
+    up.upload(); */
+
+    String callback = request.getParameter("callback");
+    String result = request.getParameter("result");
+
+    if( callback == null ){
+        response.getWriter().print( result );
+    }else{
+    	
+        response.getWriter().print("<script>"+ callback +"(" + result + ")</script>");
+    }
+    %>

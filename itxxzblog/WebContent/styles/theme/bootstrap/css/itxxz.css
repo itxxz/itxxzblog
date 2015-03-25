@@ -1,0 +1,196 @@
+/* Template-specific stuff
+ *
+ * Customizations just for the template; these are not necessary for anything
+ * with disabling the responsiveness.
+ */
+
+/* Account for fixed navbar */
+body {
+  padding-bottom: 30px;
+}
+
+
+/* Don't let the lead text change font-size. */
+.lead {
+  font-size: 16px;
+}
+
+/* Finesse the page header spacing */
+.page-header {
+  margin-bottom: 30px;
+}
+.page-header .lead {
+  margin-bottom: 10px;
+}
+
+
+/* Non-responsive overrides
+ *
+ * Utilitze the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container {
+  width: 1170px;
+  max-width: none !important;
+}
+
+/* Demonstrate the grids */
+.col-xs-4 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+.blog-masthead {
+	margin-bottom:10px;
+  background-color: #133A5B;
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+}
+
+
+/* Nav links */
+.blog-nav-item {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-weight: 500;
+  color: #cdddeb;
+}
+.blog-nav-item:hover,
+.blog-nav-item:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Active state gets a caret at the bottom */
+.blog-nav .active {
+  color: #fff;
+}
+.blog-nav .active:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  vertical-align: middle;
+  content: " ";
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid;
+  border-left: 5px solid transparent;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  width: 400px;
+  height: 300px;
+  margin-left: 80px;
+  float:left;
+}
+.carousel-inner > .item > img {
+  top: 0;
+  left: 0;
+  height: 300px;
+}
+
+
+.itxxz_hot_blogs{
+	width:400px;
+	float:left;
+	margin-left: 10px;
+}
+.itxxz_blog_title{
+	text-align:center;
+	margin:0 auto;
+	font-size:16px;
+	font-weight :700;
+	color: blue;
+}
+.itxx_bolg_content{
+	margin-top:10px;
+}
+.itxx_bolg_content p{
+	text-indent:2em;
+}
+
+.itxxz_month_ranking{
+	width:340px;
+	float:left;
+	margin-left: 10px;
+}
+
+.itxxz_hot_images{
+	width:820px;
+	margin-left: 10px;
+	position:relative; 
+	left:60px; 
+	top:-160px; 
+}
+.itxxz_hot_images > img{
+	width: 195px;
+	height: 150px;
+	margin-top: 10px;
+	float: left;
+	margin-left: 10px;
+}
+
+.itxxz_last_news{
+	float: left;
+	width: 340px;
+	height:160px;
+	margin-left: 70px;
+	margin-top:-160px;
+}
+.itxxz_blog_column{
+	float:left;
+	margin-top:-150px;
+	margin-left:70px;
+}
+.itxxz_part_column{
+	float:left;
+	margin-left:10px;
+	width:400px;
+}
+.itxxz_flink {
+  float: left;
+  margin-top:-10px;
+  margin-left: 80px;
+  width: 1160px;
+  bottom: 0px;
+}
+.itxxz_flink_content {
+	height:10px;
+}
+
+.itxxz_footer {
+  padding: 20px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+  float: left;
+  width: 100%;
+  height: 50px;
+}
+.itxxz_footer p:last-child {
+  margin-bottom: 0;
+}
+.bread_crumb_navigation{
+	margin-left: 80px;
+	width: 1160px;
+}
+.itxxz_category_list{
+	height: 500px;
+	width:700px;
+}
+.menuList.panel-heading {
+background-image: -webkit-linear-gradient(top,#dff0d8 0,#d0e9c6 100%);
