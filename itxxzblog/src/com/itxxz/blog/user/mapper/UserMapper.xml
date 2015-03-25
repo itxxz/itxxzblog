@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.itxxz.blog.user.mapper.UserMapper">
+
+
+	<resultMap id="userRM" type="com.itxxz.blog.user.entity.User">
+		<result property="id" jdbcType="INTEGER" column="id"/>
+		<result property="account" jdbcType="VARCHAR" column="account"/>
+		<result property="cname" jdbcType="VARCHAR" column="cname"/>
+		<result property="ename" jdbcType="VARCHAR" column="ename"/>
+		<result property="age" jdbcType="INTEGER" column="age"/>
+		<result property="sex" jdbcType="INTEGER" column="sex"/>
+		<result property="pwd" jdbcType="VARCHAR" column="pwd"/>
+		<result property="salt" jdbcType="VARCHAR" column="salt"/>
+		<result property="email" jdbcType="VARCHAR" column="email"/>
+		<result property="mobile" jdbcType="VARCHAR" column="mobile"/>
+		<result property="status" jdbcType="INTEGER" column="status"/>
+		<result property="creatTime" column="creat_time"/>
+		<result property="lastTime" column="last_login"/>
+		<result property="roleid" jdbcType="VARCHAR" column="roleid"/>
+		<result property="loginIP" jdbcType="VARCHAR" column="loginip"/>
+		<result property="photo" jdbcType="VARCHAR" column="photo"/>
+		<result property="locked" jdbcType="INTEGER" column="locked"/>
+	</resultMap>
+ 
+	<select id="findUsersByCondition" parameterType="com.itxxz.blog.user.entity.User" resultMap="userRM">
+		select * from ITXXZ_USER
+	</select>
+	
+	<select id="findByUserName" parameterType="java.lang.String" resultMap="userRM">
+		select * from ITXXZ_USER where account=#{userName}
+	</select>
+</mapper>

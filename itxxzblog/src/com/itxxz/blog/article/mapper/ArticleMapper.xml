@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.itxxz.blog.article.mapper.ArticleMapper">
+
+
+	<resultMap id="articleRM" type="com.itxxz.blog.article.entity.Article">
+		<result property="id" jdbcType="INTEGER" column="id"/>
+		<result property="articleName" jdbcType="VARCHAR" column="article_name"/>
+		<result property="articleContent" javaType="byte[]" jdbcType="BLOB" column="article_content" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/> 
+		<result property="articleType" jdbcType="INTEGER" column="article_type"/>
+		<result property="publishOrDraft" jdbcType="INTEGER" column="publish_or_draft"/>
+		<result property="isOnTop" jdbcType="INTEGER" column="is_on_top"/>
+		<result property="isRecommend" jdbcType="INTEGER" column="is_recommend"/>
+		<result property="isFocus" jdbcType="INTEGER" column="is_focus"/>
+		<result property="summary" jdbcType="VARCHAR" column="summary"/>
+		<result property="readingTimes" jdbcType="INTEGER" column="reading_times"/>
+		<result property="createTime" column="create_time"/>
+		<result property="author" jdbcType="INTEGER" column="author"/>
+		<result property="categoryid" jdbcType="INTEGER" column="categoryid"/>
+		<result property="tagids" jdbcType="VARCHAR" column="tagids"/>
+		<result property="commentid" jdbcType="INTEGER" column="commentid"/>
+		<result property="smallImagePath" jdbcType="VARCHAR" column="small_image_path"/>
+		
+	</resultMap>
+	
+	<insert id="insert" parameterType="com.itxxz.blog.article.entity.Article">
+		insert into ITXXZ_ARTICLE(
+			id,
+			article_name,
+			article_type,
+			article_content,
+			publish_or_draft,
+			is_on_top,
+			is_recommend,
+			is_focus,
+			summary,
+			reading_times,
+			create_time,
+			author,
+			categoryid,
+			tagids,
+			commentid,
+			small_image_path
+		) values (
+			#{id},
+			#{articleName},
+			#{articleType},
+			#{articleContent},
+			#{publishOrDraft},
+			#{isOnTop},
+			#{isRecommend},
+			#{isFocus},
+			#{summary},
+			#{readingTimes},
+			#{createTime},
+			#{author},
+			#{categoryid},
+			#{tagids},
+			#{commentid},
+			#{smallImagePath}
+		)
+	</insert>
+ 
+	<select id="findArticleByCondition" parameterType="com.itxxz.blog.article.entity.Article" resultMap="articleRM">
+		select * from ITXXZ_ARTICLE
+	</select>
+	
+	<select id="findByArticleId" parameterType="java.lang.Integer" resultMap="articleRM">
+		select * from ITXXZ_ARTICLE where id=#{articleId}
+	</select>
+	<select id="findAll" resultMap="articleRM">
+		select * from ITXXZ_ARTICLE
+	</select>
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.itxxz.blog.menu.mapper.MenuMapper">
+
+
+	<resultMap id="menuRM" type="com.itxxz.blog.menu.entity.MenuInfo">
+		<result property="id" jdbcType="INTEGER" column="id"/>
+		<result property="menuName" jdbcType="VARCHAR" column="menu_name"/>
+		<result property="menuUrl" jdbcType="VARCHAR" column="menu_url"/>
+		<result property="uid" jdbcType="INTEGER" column="uid"/>
+		<result property="menuIcon" jdbcType="VARCHAR" column="menu_icon"/>
+		
+	</resultMap>
+	
+ 
+	<select id="findPageByCondition" parameterType="com.itxxz.blog.menu.entity.MenuInfo" resultMap="menuRM">
+		select * from ITXXZ_MENU
+	</select>
+	
+	<select id="findByMenuId" parameterType="java.lang.Integer" resultMap="menuRM">
+		select * from ITXXZ_MENU where id=#{menuId}
+	</select>
+	<select id="findAll" resultMap="menuRM">
+		select * from ITXXZ_MENU
+	</select>
+</mapper>

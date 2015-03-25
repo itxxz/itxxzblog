@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.itxxz.blog.navbar.mapper.NavbarMapper">
+
+
+	<resultMap id="navRM" type="com.itxxz.blog.navbar.entity.Navbar">
+		<result property="id" jdbcType="INTEGER" column="id"/>
+		<result property="navName" jdbcType="VARCHAR" column="nav_name"/>
+		<result property="ename" jdbcType="VARCHAR" column="ename"/>
+		<result property="parentid" jdbcType="VARCHAR" column="parent_id"/>
+		<result property="level" jdbcType="INTEGER" column="level"/>
+		<result property="order" jdbcType="INTEGER" column="order"/>
+		<result property="showFlag" jdbcType="INTEGER" column="show_flag"/>
+		<result property="linkType" jdbcType="INTEGER" column="link_type"/>
+		<result property="linkUrl" jdbcType="VARCHAR" column="link_url"/>
+	</resultMap>
+ 
+	<select id="findNavsByCondition" parameterType="com.itxxz.blog.navbar.entity.Navbar" resultMap="navRM">
+		select * from ITXXZ_NAV
+	</select>
+	
+	<select id="findByNavId" parameterType="java.lang.Integer" resultMap="navRM">
+		select * from ITXXZ_NAV where id=#{navId}
+	</select>
+	<select id="findAll" resultMap="navRM">
+		select * from ITXXZ_NAV
+	</select>
+</mapper>
